@@ -28,8 +28,21 @@ print(result) """
 # Input: 2 non-negative real numbers a and b. b is not equal to 0.
 # Output data: a real number - the result of calculating the formula.
 
-a = float(input())
+""" a = float(input())
 b = float(input())
 
 x = sqrt(a * b) / (exp(a) * b) + (a * exp(2 * a / b))
-print(x)
+print(x) """
+
+# Task 9
+# Without using the arithmetic progression sum formula, calculate 1+x+x^2+...+x^n.
+# The program receives an integer n and a real number x as input.
+
+n = int(input())
+x = float(input())
+result = 0
+
+for i in range(n + 1):
+    result += x**i
+
+print(result)
