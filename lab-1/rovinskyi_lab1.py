@@ -1,4 +1,5 @@
 from math import sqrt, exp
+from random import randint
 
 # Task 7
 # For the given number n < 100, complete the phrase "Zalik zdalo..."
@@ -38,11 +39,17 @@ print(x) """
 # Without using the arithmetic progression sum formula, calculate 1+x+x^2+...+x^n.
 # The program receives an integer n and a real number x as input.
 
-n = int(input())
+""" n = int(input())
 x = float(input())
 result = 0
 
 for i in range(n + 1):
     result += x**i
 
-print(result)
+print(result) """
+
+# Task 10
+# Write a cycle which generates 10 random natural numbers
+
+for i in range(10):
+    print(randint(1,10))
