@@ -1,8 +1,11 @@
-# Task 7 - For the given number n < 100, complete the phrase "Zalik zdalo..."
+from math import sqrt, exp
+
+# Task 7
+# For the given number n < 100, complete the phrase "Zalik zdalo..."
 # with the sentences "n studentiv", "n studenty" or "n student",
 # using the correct results
 
-n = input("Enter the quantity of students: ")
+""" n = input("Enter the quantity of students: ")
 phrase = "Zalik zdalo"
 
 if n.isnumeric():
@@ -19,4 +22,14 @@ if n.isnumeric():
     else:
         result = f"{phrase} {n} studentiv"
 
-print(result)
+print(result) """
+
+# Task 8
+# Input: 2 non-negative real numbers a and b. b is not equal to 0.
+# Output data: a real number - the result of calculating the formula.
+
+a = float(input())
+b = float(input())
+
+x = sqrt(a * b) / (exp(a) * b) + (a * exp(2 * a / b))
+print(x)
