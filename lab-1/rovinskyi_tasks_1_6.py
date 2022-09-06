@@ -11,8 +11,8 @@ print(int(x + 0.8))
 x = str(x)
 print(x*3)
 
-# Task 5 - Print a variable with the sep and end parameter for print function ???
-# print((x*3)[::1], sep='; ', end='.\n')
+# Task 5 - Print x and x*3 with the sep and end parameter for print function
+print(x, x*3, sep='; ', end='.\n')
 
 # Task 6 - Print data with f-string
 print(f'{x = }')
