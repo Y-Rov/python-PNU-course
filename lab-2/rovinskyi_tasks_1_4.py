@@ -17,7 +17,7 @@ print(first_list)
 # Specify a list created by random numbers from 1 to 9 and print.
 # Add it to the end of the previous list
 
-second_list=[]
+second_list = []
 n = int(input())
 for i in range(n):
     second_list.append(randrange(1, 10))
