@@ -34,3 +34,13 @@ word = input()
 symbols = list(word)
 print(symbols)
 
+# Task 4
+# The number x is entered from the keyboard. Calculate the fraction 1/x.
+# The possibility of a "division by zero" error is determined by a block "Division by zero is not possible"
+
+x = int(input())
+try:
+    result = 1 / x
+    print(result)
+except ZeroDivisionError:
+    print("Ділити на нуль не можна")
