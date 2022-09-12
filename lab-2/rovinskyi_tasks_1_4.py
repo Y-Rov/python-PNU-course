@@ -1,5 +1,5 @@
-from lib2to3.pygram import Symbols
 from random import randrange
+
 # Task 1 
 # Create an empty list. Add items from the keyboard. Display the list. 
 # Display the length of the list. Remove the first element.
