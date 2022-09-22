@@ -1,5 +1,7 @@
-products = [['apple', 12], ['banana', 38.5], ['bread', 20.3],
-            ['potato', 40], ['cucumber', 18.2], ['tomato', 10]]
+# Task 1
+
+""" products = [ ['apple', 12], ['banana', 38.5], ['bread', 20.3],
+            ['potato', 40], ['cucumber', 18.2], ['tomato', 10] ]
 sum_of_purchase = 0.0
 
 print("Welcome to our shop!\nHere is the assortment:")
@@ -40,4 +42,22 @@ if sum_of_purchase != 0.0:
     print(f'{item} x {amount} = {sum}')
   print("------------------------")
   print(f"To pay: {sum_of_purchase} UAH")
-print("Have a nice day!")
+print("Have a nice day!") """
+
+# Task 2
+
+grade_book = { "Doroshenko": [5, 4, 4, 5, 4], "Pavliv": [3, 4, 5, 4], "Kapush": [3, 3, 2], 
+              "Ugrynia": [5, 4, 3, 2, 1], "Koropetskyi": [2, 2, 3, 3, 3, 1], 
+              "Pavliuk": [5, 5, 4, 5], "Bodnar": [2, 1, 2]}
+zaborgovanist = 0
+zalik = {}
+for student, marks in grade_book.items():
+  average = sum(marks) / len(marks)
+  if average < 3:
+    zaborgovanist += 1
+  
+  print(f"{student}'s {average = }")
+  zalik[student] = average
+
+print(f"{zaborgovanist = }")
+print(zalik)
