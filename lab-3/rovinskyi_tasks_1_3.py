@@ -41,8 +41,8 @@ while chosen_product != 'enough':
 if sum_of_purchase != 0.0:
     print("Here is your purchase: ")
     print("------------------------")
-    for item, amount, sum in purchase:
-        print(f'{item} x {amount} = {sum}')
+    for item, amount, total in purchase:
+        print(f'{item} x {amount} = {total}')
     print("------------------------")
     print(f"To pay: {sum_of_purchase} UAH")
     print("Have a nice day!")
@@ -57,7 +57,7 @@ grade_book = {
 zaborgovanist = 0
 for student, marks in grade_book.items():
     average = sum(marks) / len(marks)
-    if average < 3:
+    if average < 3.0:
         zaborgovanist += 1
   
     print(f"{student}'s {average = }")
