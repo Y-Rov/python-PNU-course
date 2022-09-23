@@ -4,7 +4,7 @@ from random import randint
 # Task 7
 # For the given number n < 100, complete the phrase "Zalik zdalo..."
 # with the sentences "n studentiv", "n studenty" or "n student",
-# using the correct results
+# using the correct endings.
 
 n = input("Enter the quantity of students: ")
 phrase = "Zalik zdalo"
@@ -27,7 +27,7 @@ print(result)
 
 # Task 8
 # Input: 2 non-negative real numbers a and b. b is not equal to 0.
-# Output data: a real number - the result of calculating the formula.
+# Output: a real number - the result of formula calculation.
 
 a = float(input())
 b = float(input())
@@ -71,7 +71,7 @@ while game_end == False:
         game_end = True
     elif result == "n":
         answer = input(f"Is your number 'less' or 'greater' than {number_to_guess}? ")
-        if (answer == "less"):
+        if answer == "less":
             right_border = number_to_guess
         elif answer == "greater":
             left_border = number_to_guess
