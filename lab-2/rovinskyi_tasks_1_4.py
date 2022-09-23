@@ -15,7 +15,7 @@ print(first_list)
 
 # Task 2
 # Specify a list created by random numbers from 1 to 9 and print.
-# Add it to the end of the previous list
+# Add it to the end of the previous list.
 
 second_list = []
 n = int(input())

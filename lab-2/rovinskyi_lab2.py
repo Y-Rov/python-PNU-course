@@ -1,3 +1,16 @@
+# The main task of lab №2
+# This script displays an interactive menu for user.
+# What commands are actually available:
+# 1. Create an empty list
+# 2. Add new element to the existing list
+# 3. List preview
+# 4. Create an automatic list of natural numbers with a certain length
+# 5. Change the list item by its index
+# 6. Insert an element at the specified position
+# 7. Remove a list item by its index
+# 8. Help (prints this menu again)
+# 9. Exit the program
+
 print("Program menu:\n1. Create an empty list\n2. Add new element to the existing list\n3. List preview")
 print("4. Create an automatic list of natural numbers with a certain length\n5. Change the list item by its index")
 print("6. Insert an element at the specified position")

@@ -1,5 +1,5 @@
 # Task 1 
-# Read the integer number x from the keyboard 
+# Read the integer number x from the keyboard
 x = int(input("Please enter any integer: "))
 
 # Task 2
