@@ -1,5 +1,5 @@
 from random import randint
-from typing import Dict, Tuple
+from typing import Dict, List, Tuple
 
 # Task 1
 def get_amount_of_one_letter_words(text: str) -> int:
@@ -28,3 +28,10 @@ def generate_student_marks(people: Tuple[str, ...]) -> Dict[str, int]:
 students = ("Hrynkiv", "Maksymchuk", "Luchynskyi", "Rovinskyi", "Pavliuk")
 journal = generate_student_marks(students)
 print(journal)
+
+# Task 5
+
+def generate_all_combinations_of(symbols: str) -> List[str]:
+    return [first_symb + second_symb for first_symb in symbols for second_symb in symbols]
+
+print(generate_all_combinations_of("01"))
