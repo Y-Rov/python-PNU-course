@@ -36,11 +36,11 @@ def generate_all_combinations_of(symbols: str) -> List[str]:
 print(generate_all_combinations_of("01"))
 
 # Task 6
-def get_every_word_occurence(text: str) -> Dict[str, int]:
+def get_every_word_occurrence(text: str) -> Dict[str, int]:
     words = "".join(filter(lambda ch: ch not in ",?.!-:", text)).lower().split(' ')
     return {word : words.count(word) for word in words}
 
-print(get_every_word_occurence("Hello - hello, hi! What's up?"))
+print(get_every_word_occurrence("Hello - hello, hi! What's up?"))
 
 # Task 7
 def get_session_results(students: Dict[str, str]) -> Dict[str, int]:
