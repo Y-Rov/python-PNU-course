@@ -1,4 +1,3 @@
-import currency_converter as curr
+import currency_converter
 
-# curr.set_cash_rate(False)
-curr.buy('USD', 'UAH', 5)
+currency_converter.buy('USD', 'UAH', 5)
