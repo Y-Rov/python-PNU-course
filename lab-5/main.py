@@ -1,3 +1,5 @@
 import currency_converter
 
-currency_converter.buy('USD', 'UAH', 5)
+result = currency_converter.buy(what='USD', for_what='UAH', client_pays=45)
+print(result)
+a = 5
