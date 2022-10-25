@@ -1,5 +1,5 @@
 from math import sqrt
-from typing import NamedTuple
+from typing import Dict, List, NamedTuple
 
 class Coordinate(NamedTuple):
     """A point in 2D space"""
@@ -39,3 +39,15 @@ vector2 = Vector(Coordinate(0, 0), Coordinate(2, 0))
 
 print(vector1.is_perpendicular_to(vector2))
 
+class Student:
+    marks_data = Dict[str, List[int]]
+    def __init__(self, name: str, surname: str, marks: marks_data) -> None:
+        self.name = name
+        self.surname = surname
+        self.marks = marks
+    
+    def __str__(self) -> str:
+        return f'Student - {self.name} {self.surname}; subjects with marks - {self.marks}.'
+
+student = Student('John', 'Doe', {'math': [90, 91, 93]})
+print(student)
