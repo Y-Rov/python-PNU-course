@@ -58,9 +58,14 @@ class Student:
     def get_average_mark_from(self, subject: str) -> float:
         marks = self.get_marks_from(subject)
         return sum(marks) / len(marks) if len(marks) != 0 else 0
+
+    def get_total_average_mark(self) -> float:
+        all_sums_and_lengths = [(sum(marks), len(marks)) for marks in self.marks.values()]
+        return sum(one_sum for one_sum, _ in all_sums_and_lengths) / sum(one_length for _, one_length in all_sums_and_lengths)
     
 
-student = Student('John', 'Doe', {'math': [90, 91, 93]})
+student = Student('John', 'Doe', {'math': [3, 4, 5], 'physics': [2, 1, 3, 4]})
 student.print_all_subjects()
 print(student.get_marks_from('algebra'))
 print(student.get_average_mark_from('algebra'))
+print(student.get_total_average_mark())
