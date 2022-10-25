@@ -48,6 +48,19 @@ class Student:
     
     def __str__(self) -> str:
         return f'Student - {self.name} {self.surname}; subjects with marks - {self.marks}.'
+    
+    def print_all_subjects(self) -> None:
+        print(list(self.marks.keys()))
+
+    def get_marks_from(self, subject: str) -> List[int]:
+        return self.marks.get(subject, [])
+    
+    def get_average_mark_from(self, subject: str) -> float:
+        marks = self.get_marks_from(subject)
+        return sum(marks) / len(marks) if len(marks) != 0 else 0
+    
 
 student = Student('John', 'Doe', {'math': [90, 91, 93]})
-print(student)
+student.print_all_subjects()
+print(student.get_marks_from('algebra'))
+print(student.get_average_mark_from('algebra'))
