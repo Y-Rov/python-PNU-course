@@ -1,5 +1,5 @@
 from math import sqrt
-from typing import Dict, List, NamedTuple
+from typing import DefaultDict, List, NamedTuple
 
 class Coordinate(NamedTuple):
     """A point in 2D space"""
@@ -40,7 +40,8 @@ vector2 = Vector(Coordinate(0, 0), Coordinate(2, 0))
 print(vector1.is_perpendicular_to(vector2))
 
 class Student:
-    marks_data = Dict[str, List[int]]
+    marks_data = DefaultDict[str, List[int]]
+
     def __init__(self, name: str, surname: str, marks: marks_data) -> None:
         self.name = name
         self.surname = surname
@@ -53,7 +54,7 @@ class Student:
         print(list(self.marks.keys()))
 
     def get_marks_from(self, subject: str) -> List[int]:
-        return self.marks.get(subject, [])
+        return list(self.marks[subject])
     
     def get_average_mark_from(self, subject: str) -> float:
         marks = self.get_marks_from(subject)
@@ -63,9 +64,30 @@ class Student:
         all_sums_and_lengths = [(sum(marks), len(marks)) for marks in self.marks.values()]
         return sum(one_sum for one_sum, _ in all_sums_and_lengths) / sum(one_length for _, one_length in all_sums_and_lengths)
     
+    def has_credit_from(self, subject: str) -> bool:
+        return self.get_average_mark_from(subject) >= 4
 
-student = Student('John', 'Doe', {'math': [3, 4, 5], 'physics': [2, 1, 3, 4]})
+    def add_new_subject_with_marks(self, subject_and_marks: marks_data) -> None:
+        self.marks.update(subject_and_marks)
+    
+    def add_new_mark_to(self, subject: str, mark: int) -> None:
+        self.get_marks_from(subject).append(mark)
+    
+    def get_list_of_average_marks(self) -> List[float]:
+        marks_data = self.marks.items()
+        subjects_and_avg_marks = {subject: sum(marks) / len(marks) for subject, marks in marks_data}
+        print(f'{self.surname}:')
+        print(subjects_and_avg_marks.items())
+        for subject, marks in subjects_and_avg_marks.items():
+            print(f'{subject}: {marks}')
+        return list(subjects_and_avg_marks.values())
+
+    
+subjects = {'math': [3, 4, 5], 'physics': [2, 1, 3, 4]}
+student = Student('John', 'Doe', DefaultDict(List[int], subjects))
 student.print_all_subjects()
 print(student.get_marks_from('algebra'))
 print(student.get_average_mark_from('algebra'))
 print(student.get_total_average_mark())
+print(student.has_credit_from('physics'))
+print(student.get_list_of_average_marks())
