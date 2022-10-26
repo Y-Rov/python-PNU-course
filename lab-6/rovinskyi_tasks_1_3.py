@@ -1,5 +1,6 @@
+import csv
 from math import sqrt
-from typing import DefaultDict, Dict, List, NamedTuple
+from typing import Dict, List, NamedTuple
 
 class Coordinate(NamedTuple):
     """A point in 2D space"""
@@ -81,7 +82,21 @@ class Student:
 
         return list(subjects_and_avg_marks.values())
 
+class ComputeSumFromCSV:
+    def __init__(self, file_path: str) -> None:
+        self.path = file_path
     
+    def compute(self) -> None:
+        with open('KN-2.csv', 'r') as file:
+            csv_reader = csv.DictReader(file)
+            student_sum: Dict[str, float] = {}
+            for line in csv_reader:
+                total = 0
+                total += 2 if line['Lab1'] == '+' else 0
+                total += 2 if line['Lab2'] == '+' else 0
+                # total += if line['Lab3']
+
+
 
 student = Student('John', 'Doe', {'math': [3, 4, 5], 'physics': [2, 1, 3, 4]})
 student.print_all_subjects()
