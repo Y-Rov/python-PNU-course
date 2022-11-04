@@ -1,3 +1,4 @@
+# This script contains the solution for task №1 that consists of 2 parts
 
 def count_different_digits_in(number: int) -> int:
     """Counts the amount of different digits in integer"""
