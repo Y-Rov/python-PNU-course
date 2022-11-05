@@ -1,3 +1,5 @@
+# This script contains the solution for task №5
+
 import pickle
 
 class Person:
@@ -30,15 +32,18 @@ class PhoneDir:
         self.contact_list: list = []
 
     def add_number(self, someone: Familiar) -> None:
+        """Adds a new contact to the current list"""
         self.contact_list.append(someone)
         self.save_to_file()
 
     def find_phones_by_surname(self, surname: str) -> str:
+        """Returns all phones that person with 'surname' has"""
         self.read_from_file()
         iter = filter(lambda familiar: (familiar.name == surname), self.contact_list)
         return " ".join([familiar.phone for familiar in iter])
     
     def replace_old_phone_for_someone(self, surname: str, new_phone: str) -> None:
+        """Updates the phone number for the first occured person with 'surname'"""
         someone = next(filter(lambda familiar: (familiar.name == surname), self.contact_list))
         someone.phone = new_phone
         self.save_to_file()
