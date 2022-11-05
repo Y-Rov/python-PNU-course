@@ -1,6 +1,13 @@
-# This script contains the solution for task №4 that consists of 5 parts
+# This script contains the solution for tasks №3 and №4
 
 from collections import Counter
+
+def if_brackets_are_correctly_placed_in(text: str) -> str:
+    """Checks if text contains all '(' and ')'"""
+    modified = "".join(filter(lambda symbol: (symbol == '(' or symbol == ')'), text))
+    return "так" if text.count('(') == text.count(')') and modified.endswith(')') and modified.startswith('(') else "ні"
+
+print(if_brackets_are_correctly_placed_in("sw(ss(sd)sd)"))
 
 def print_vowels_that_are_everywhere(text: str) -> None:
     """Prints all vowels which are in each word"""
