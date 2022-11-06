@@ -79,4 +79,4 @@ class Book:
             self._price = Decimal(value)
         elif isinstance(value, Decimal):
             self._price = value
-    
+
