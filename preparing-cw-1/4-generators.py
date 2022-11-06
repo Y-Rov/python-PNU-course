@@ -1,3 +1,6 @@
+# Скласти програми.docx
+# This script contains the solution for task №7
+
 from math import factorial
 from typing import Iterator
 

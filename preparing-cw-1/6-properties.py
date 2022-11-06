@@ -1,3 +1,6 @@
+# Скласти програми.docx
+# This script contains solutions for tasks №12 and №13
+
 from decimal import Decimal
 from math import sqrt
 from typing import NamedTuple

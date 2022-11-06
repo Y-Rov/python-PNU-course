@@ -1,3 +1,4 @@
+# Скласти програми.docx
 # This script contains the solution for task №5
 
 import pickle

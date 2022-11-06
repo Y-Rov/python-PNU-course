@@ -1,3 +1,6 @@
+# Скласти програми.docx
+# This script contains solutions for tasks №8-11
+
 from collections import Counter
 from typing import Dict
 
