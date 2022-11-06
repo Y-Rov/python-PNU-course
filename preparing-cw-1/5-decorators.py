@@ -1,6 +1,9 @@
-def reverse(func):
+from collections import Counter
+from typing import Dict
+
+def reverse(get_list):
     def wrapper():
-        result_list = func()
+        result_list = get_list()
         result_list.reverse()
         return result_list
     return wrapper
@@ -11,13 +14,13 @@ def generate_list() -> list:
 
 print(generate_list())
 
-def check_duplicate_values(func):
+def check_duplicate_values(swap):
     def wrapper(input_dict: dict):
         values = list(input_dict.values())
         if (len(values) != len(set(values))):
             raise ValueError
         else:
-            return func(input_dict)
+            return swap(input_dict)
     
     return wrapper
 
@@ -41,3 +44,24 @@ def generate_text() -> str:
     return "The winner takes it all! I don't wanna talk if it makes you feel sad..."
 
 print(generate_text())
+
+def check_unsuitable_values(get_session_result):
+    def wrapper(students: dict):
+        marks = ["Незадовільно", "Задовільно", "Добре", "Відмінно"]
+        for value in students.values():
+            if value not in marks:
+                return 'Сесія ще не завершена'
+        
+        return get_session_result(students)
+
+    return wrapper
+
+@check_unsuitable_values
+def get_session_results(students: Dict[str, str]) -> Counter:
+    return Counter(students.values())
+
+test_result = {
+    "Hrynkiv": "Добре", "Maksymchuk": "Задовільно", "Ivanov": "Незадовільно",
+    "Rovinskyi": "Добре", "Pavliuk": "Відмінно"
+}
+print(get_session_results(test_result))
